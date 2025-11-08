@@ -11,7 +11,7 @@ public class Image implements Displayable {
 
     public Image(int width, int height) {
         canvas = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-        // Fill background with white
+        // Fill background with black
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
                 canvas.setRGB(x, y, Color.BLACK.getRGB());

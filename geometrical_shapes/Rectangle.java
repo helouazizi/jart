@@ -13,7 +13,6 @@ public class Rectangle implements Drawable {
         this.color = Color.BLUE;
     }
 
-    @Override
     public void draw(Displayable displayable) {
         Point topRight = new Point(bottomRight.getX(), topLeft.getY());
         Point bottomLeft = new Point(topLeft.getX(), bottomRight.getY());
@@ -24,7 +23,6 @@ public class Rectangle implements Drawable {
         new Line(bottomLeft, topLeft).draw(displayable);
     }
 
-    @Override
     public Color getColor() {
         return color;
     }

@@ -17,14 +17,13 @@ public class Line implements Drawable {
         return new Line(Point.random(width, height), Point.random(width, height));
     }
 
-    @Override
     public void draw(Displayable displayable) {
         int x1 = start.getX();
         int y1 = start.getY();
         int x2 = end.getX();
         int y2 = end.getY();
 
-        // Bresenham's line algorithm
+        // Bresenham line algorithm
         int dx = Math.abs(x2 - x1);
         int dy = Math.abs(y2 - y1);
         int sx = x1 < x2 ? 1 : -1;
@@ -40,7 +39,6 @@ public class Line implements Drawable {
         }
     }
 
-    @Override
     public Color getColor() {
         return color;
     }

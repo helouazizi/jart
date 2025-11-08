@@ -13,14 +13,12 @@ public class Triangle implements Drawable {
         this.color = Color.RED;
     }
 
-    @Override
     public void draw(Displayable displayable) {
         new Line(a, b).draw(displayable);
         new Line(b, c).draw(displayable);
         new Line(c, a).draw(displayable);
     }
 
-    @Override
     public Color getColor() {
         return color;
     }
