@@ -11,7 +11,7 @@ public class Point implements Drawable {
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
-        this.color = Color.BLACK;
+        this.color = Color.GREEN;
     }
 
     public static Point random(int width, int height) {
@@ -22,12 +22,10 @@ public class Point implements Drawable {
     public int getX() { return x; }
     public int getY() { return y; }
 
-    @Override
     public void draw(Displayable displayable) {
         displayable.display(x, y, color);
     }
 
-    @Override
     public Color getColor() {
         return color;
     }

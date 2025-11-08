@@ -8,20 +8,31 @@ public class Circle implements Drawable {
     private int radius;
     private Color color;
 
-    public Circle(Point center, int radius) {
+    public Circle(Point center, int radius, Color color) {
         this.center = center;
         this.radius = radius;
-        this.color = Color.MAGENTA;
+        this.color = color;
+    }
+
+    public Circle(Point center, int radius) {
+        this(center, radius, Color.MAGENTA);
     }
 
     public static Circle random(int width, int height) {
         Random random = new Random();
         Point center = new Point(random.nextInt(width), random.nextInt(height));
         int radius = random.nextInt(50) + 10;
-        return new Circle(center, radius);
+
+        // Generate a random color
+        Color randomColor = new Color(
+            random.nextInt(256),
+            random.nextInt(256),
+            random.nextInt(256)
+        );
+
+        return new Circle(center, radius, randomColor);
     }
 
-    @Override
     public void draw(Displayable displayable) {
         int x0 = center.getX();
         int y0 = center.getY();
@@ -48,7 +59,6 @@ public class Circle implements Drawable {
         }
     }
 
-    @Override
     public Color getColor() {
         return color;
     }
