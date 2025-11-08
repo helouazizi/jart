@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
         Image image = new Image(1000, 1000);
 
-        // Draw a rectangle
         Rectangle rectangle = new Rectangle(new Point(50, 50), new Point(300, 200));
         rectangle.draw(image);
 
