@@ -1,5 +1,7 @@
+
+
 import geometrical_shapes.*;
-import java.awt.Color;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -12,6 +14,7 @@ public class Main {
 
         for (int i = 0; i < 20; i++) {
             Circle circle = Circle.random(image.getWidth(), image.getHeight());
+           
             circle.draw(image);
         }
 
@@ -25,4 +28,5 @@ public class Main {
         
         image.save("image.png");
     }
+    
 }
