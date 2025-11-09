@@ -1,16 +1,8 @@
-import geometrical_shapes.Image;
 
-import java.awt.*;
-interface Displayable {
-    void display(int x, int y, Color color);
+import java.awt.Color;
 
-    void save(String string);
-}
+import geometrical_shapes.*;
 
-interface Drawable {
-    void draw(Displayable displayable);
-    Color getColor();
-}
 
 public class Main {
     public static void main(String[] args) {
@@ -26,4 +18,5 @@ public class Main {
         // }
         image.save("image.png");
     }
+    
 }

@@ -11,12 +11,15 @@ public class Image implements Displayable {
 
     public Image(int width, int height) {
         this.image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        
     }
-    @Override
+    
     public void display(int x, int y, Color color) {
+        if (x >= 0 && y >= 0 && x < image.getWidth() && y < image.getHeight()) {
+            image.setRGB(x, y, color.getRGB());
+        }
     }
 
-    @Override
     public void save(String string) {
         try {
             ImageIO.write(image, "png", new File(string));
@@ -25,5 +28,4 @@ public class Image implements Displayable {
         }
 
     }
-    // Frame frame = new Frame();
 }
