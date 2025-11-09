@@ -11,9 +11,17 @@ public class Image implements Displayable {
 
     public Image(int width, int height) {
         this.image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-        
+
     }
-    
+
+    public int getWidth(){
+        return image.getWidth();
+    }
+
+    public int getHeight(){
+        return image.getHeight();
+    }
+
     public void display(int x, int y, Color color) {
         if (x >= 0 && y >= 0 && x < image.getWidth() && y < image.getHeight()) {
             image.setRGB(x, y, color.getRGB());
