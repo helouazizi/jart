@@ -1,7 +1,4 @@
-
-
 import geometrical_shapes.*;
-
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +11,6 @@ public class Main {
 
         for (int i = 0; i < 20; i++) {
             Circle circle = Circle.random(image.getWidth(), image.getHeight());
-           
             circle.draw(image);
         }
 
@@ -28,5 +24,4 @@ public class Main {
         
         image.save("image.png");
     }
-    
 }

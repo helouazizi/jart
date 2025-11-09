@@ -1,8 +1,9 @@
 package geometrical_shapes;
-
 import java.awt.Color;
 
-interface Drawable {
-    void draw(Displayable displayable);
+public interface Drawable {
+
+    public void draw(Displayable d);
+
     Color getColor();
 }

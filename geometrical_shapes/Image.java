@@ -1,39 +1,52 @@
 package geometrical_shapes;
-
-import java.awt.*;
+import javax.imageio.ImageIO;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
 
 public class Image implements Displayable {
-    private final BufferedImage image;
+    private BufferedImage bufferedImage;
+    private int width;
+    private int height;
 
     public Image(int width, int height) {
-        this.image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        this.width = width;
+        this.height = height;
+        this.bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                bufferedImage.setRGB(x, y, Color.BLACK.getRGB());
+            }
+        }
     }
 
-    public int getWidth(){
-        return image.getWidth();
+    public int getWidth() {
+        return width;
     }
 
-    public int getHeight(){
-        return image.getHeight();
+    public int getHeight() {
+        return height;
     }
 
+    @Override
     public void display(int x, int y, Color color) {
-        if (x >= 0 && y >= 0 && x < image.getWidth() && y < image.getHeight()) {
-            image.setRGB(x, y, color.getRGB());
+        if (x >= 0 && x < width && y >= 0 && y < height) {
+            bufferedImage.setRGB(x, y, color.getRGB());
         }
     }
 
-    public void save(String string) {
+    @Override
+    public void save(String filename) {
         try {
-            ImageIO.write(image, "png", new File(string));
+            String formatName = filename.substring(filename.lastIndexOf('.') + 1);
+            File outputFile = new File(filename);
+            ImageIO.write(bufferedImage, formatName, outputFile);
+            System.out.println("Image saved successfully to " + filename);
         } catch (IOException e) {
-            System.out.println(e);
+            System.err.println("Error saving image: " + e.getMessage());
+            e.printStackTrace();
         }
-
     }
 }
