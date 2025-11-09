@@ -1,4 +1,5 @@
 package geometrical_shapes;
+
 import javax.imageio.ImageIO;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -14,9 +15,8 @@ public class Image implements Displayable {
         this.width = width;
         this.height = height;
         this.bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
+          for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
                 bufferedImage.setRGB(x, y, Color.BLACK.getRGB());
             }
         }
@@ -30,19 +30,15 @@ public class Image implements Displayable {
         return height;
     }
 
-    @Override
     public void display(int x, int y, Color color) {
         if (x >= 0 && x < width && y >= 0 && y < height) {
             bufferedImage.setRGB(x, y, color.getRGB());
         }
     }
 
-    @Override
     public void save(String filename) {
         try {
-            String formatName = filename.substring(filename.lastIndexOf('.') + 1);
-            File outputFile = new File(filename);
-            ImageIO.write(bufferedImage, formatName, outputFile);
+            ImageIO.write(bufferedImage, "png", new File(filename));
             System.out.println("Image saved successfully to " + filename);
         } catch (IOException e) {
             System.err.println("Error saving image: " + e.getMessage());

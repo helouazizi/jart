@@ -14,12 +14,12 @@ public class Circle implements Drawable {
         this.color = Color.GREEN;
     }
 
-    @Override
+
     public Color getColor() {
         return this.color;
     }
 
-    @Override
+
     public void draw(Displayable d) {
         int centerX = center.getX();
         int centerY = center.getY();

@@ -16,13 +16,13 @@ public class Triangle implements Drawable {
         this.color = Color.RED;
     }
 
-    @Override
+
     public Color getColor() {
         return this.color;
     }
 
 
-    @Override
+
     public void draw(Displayable d) {
         Line side1 = new Line(vertex1, vertex2);
         Line side2 = new Line(vertex2, vertex3);

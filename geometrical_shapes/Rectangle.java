@@ -13,12 +13,12 @@ public class Rectangle implements Drawable {
         this.color = Color.BLUE;
     }
 
-    @Override
+
     public Color getColor() {
         return this.color;
     }
 
-    @Override
+
     public void draw(Displayable d) {
         int minX = Math.min(corner1.getX(), corner2.getX());
         int maxX = Math.max(corner1.getX(), corner2.getX());

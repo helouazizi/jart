@@ -23,12 +23,12 @@ public class Point implements Drawable {
         return y;
     }
 
-    @Override
+
     public Color getColor() {
         return this.color;
     }
 
-    @Override
+
     public void draw(Displayable d) {
 
         d.display(this.x, this.y, this.color);
